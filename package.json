@@ -1,0 +1,23 @@
+{
+  "name": "my2048",
+  "version": "1.0.0",
+  "description": "New version of 2048 game",
+  "main": "main.js",
+  "devDependencies": {
+    "electron-builder": "^22.3.2",
+    "electron": "^7.1.11"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "mac": {
+      "category": "your.app.category.type"
+    }
+  },
+  "scripts": {
+    "start": "electron ./app",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Lipatova Liza",
+  "license": "MIT"
+}

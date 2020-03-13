@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>New version of 2048 game</title>
+  </head>
+  <body>
+    <div>
+      <table class="makeWhite">
+        <caption>
+          <th></th>
+        </caption>
+      </table>
+      <table class="result">
+        <caption>
+          <th>Набраные очки</th>
+          <th>Лучший результат</th>
+        </caption>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <table class="chess">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <table class="endTablifGameOver">
+      <th>Игра окончена, чувак!</th>
+      <th>
+        <button class="image"></button>
+      </th>
+    </table>
+    <div class="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" />
+      <label class="menu__btn" for="menu__toggle">
+        <span></span>
+      </label>
+      <ul class="menu__box">
+        <h1>Меню</h1>
+        <li><a class="menu__item" href="#main">О программе</a></li>
+        <a href="#" id="main">
+          <div id="okno">
+            А-ля 2048 Выполнила:студентка 2 курса, группы 6.04.122.010.18.1,
+            факультета ЭИ, Липатова Лиза
+          </div>
+        </a>
+        <li><a class="menu__item rest" href="#">Начать сначала</a></li>
+        <li><a class="menu__item" href="#m" id="end">Завершить</a></li>
+        <a href="#" id="m">
+          <table class="r">
+            <caption>
+              <th>Ваш результат:</th>
+              <th></th>
+            </caption>
+          </table>
+        </a>
+      </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

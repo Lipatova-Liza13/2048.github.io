@@ -1,0 +1,276 @@
+table {
+  margin: 20px 0;
+}
+.chess {
+  position: absolute; /* Абсолютное позиционирование */
+  left: 34px;
+  top: 140px;
+  background: rgb(255, 203, 124);
+  width: 420px;
+  height: 400px;
+  border-collapse: separate; /*одинарная рамка*/
+  border: 7px dotted rgb(252, 154, 26);
+  border-spacing: 10px;
+  border-radius: 20px; /*закругляю края*/
+}
+.chess th,
+.chess td {
+  border: 2px solid #fdeaa8; /*отступ */
+  width: 100px;
+  height: 100px;
+  background: #fcdd76;
+  border-radius: 10px; /*закругляю края*/
+}
+
+.chess td {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Bradley Hand";
+  font-size: 18pt;
+}
+.makeWhite {
+  background: white;
+  width: 440px;
+  height: 610px;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0px;
+  left: 1px;
+  opacity: 0;
+}
+.result {
+  background: rgb(255, 203, 124);
+  width: 420px;
+  height: 100px;
+  border-collapse: separate; /*одинарная рамка*/
+  border: 6px double rgb(252, 154, 26);
+  border-spacing: 10px;
+  border-radius: 20px; /*закругляю края*/
+  position: absolute; /* Абсолютное позиционирование */
+  left: 34px;
+}
+.result td {
+  border-radius: 20px; /*закругляю края*/
+  background: #ffa500;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Bradley Hand" Cursive;
+  font-size: 18pt;
+}
+.endTablifGameOver {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  padding: 15px;
+  border: 16px double rgb(252, 154, 26);
+  background: rgb(255, 251, 31);
+  border-radius: 10px;
+  color: #010105;
+  font-family: "Brush Script Std" Cursive;
+  font-size: 14pt;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 210px; /* Положение от hight края */
+  left: 66px; /* Положение от left края */
+  margin: auto;
+  opacity: 0;
+}
+caption {
+  font-family: "Brush Script Std" Cursive;
+  font-size: 40pt;
+}
+.rez {
+  width: 400px;
+  height: 50px;
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+  opacity: 0;
+}
+/* стилизуем кнопку */
+.menu__btn {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center; /* центрируем содержимое кнопки */
+  position: fixed;
+  top: 8px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 450px;
+  height: 470px;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #fcdd76;
+  opacity: 0.95; /*opacity принимает значения в диапазоне от 0 (полностью прозрачный) до 1 (непрозрачный)*/
+  border: 16px double rgb(252, 154, 26);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+/* элементы меню */
+h1 {
+  text-align: center;
+  color: rgb(252, 154, 26);
+  font-weight: bold;
+  font-family: "Bradley Hand";
+  font-style: italic;
+  font-size: 34pt;
+}
+.menu__item {
+  display: block;
+  padding: 30px 24px;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu__item:hover {
+  background-color: rgb(252, 154, 26);
+}
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: 0.25s;
+}
+.menu__box {
+  transition-duration: 0.25s;
+}
+.menu__item {
+  transition-duration: 0.25s;
+}
+
+#main {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#m {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#okno {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  padding: 15px;
+  border: 16px double rgb(252, 154, 26);
+  background: rgb(255, 251, 31);
+  border-radius: 10px;
+  color: #010105;
+  font-family: "Brush Script Std" Cursive;
+  font-size: 14pt;
+  position: absolute;
+  top: 2;
+  right: 0;
+  bottom: 1;
+  left: 0;
+  margin: auto;
+}
+.r {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  padding: 15px;
+  border: 16px double rgb(252, 154, 26);
+  background: rgb(255, 251, 31);
+  border-radius: 10px;
+  color: #010105;
+  font-family: "Brush Script Std" Cursive;
+  font-size: 14pt;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 1;
+  left: 1;
+  margin: auto;
+}
+#main:target {
+  display: block;
+}
+#m:target {
+  display: block;
+}
+.endTablifGameOver {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  padding: 15px;
+  border: 16px double rgb(252, 154, 26);
+  background: rgb(255, 251, 31);
+  border-radius: 10px;
+  color: #010105;
+  font-family: "Brush Script Std" Cursive;
+  font-size: 14pt;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 210px; /* Положение от hight края */
+  left: 66px; /* Положение от left края */
+  margin: auto;
+  opacity: 0;
+}
+.image {
+  background-image: url(images/bg.png); /* Путь к фоновому изображению */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: rgb(255, 251, 31);
+  border: 2px solid rgb(252, 154, 26);
+  transition-duration: 0.4s; /* transition-durationсвойство, чтобы определить скорость эффекта "зависания":*/
+}
+/*:hoverселектор, чтобы изменить стиль кнопки при наведении на нее мыши*/
+.image:hover {
+  background-color: rgb(252, 154, 26); /* Green */
+  color: white;
+}
